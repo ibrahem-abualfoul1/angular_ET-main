@@ -1,0 +1,62 @@
+<section id="contact" class="contact_area bg_cover pt-120 pb-130" style="background-image: url(assets/images/contact_bg.jpg)">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="section_title section_title_2 text-center pb-25">
+        <h4 class="title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Login</h4>
+      </div>
+    </div>
+
+  </div>
+  <form id="contact-form"  method="post" class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.4s" style="margin: 1px;">
+    <div class="row">
+    <div class="col-lg-6">
+    <div class="single_form">
+  <mat-error
+  *ngIf="
+    emailControl.hasError('email') && !emailControl.hasError('required')
+  "
+>
+  Please enter a valid email address
+</mat-error>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input class="placeholder"
+        type="email"
+        matInput
+        style="font-size: x-large"
+        [formControl]="emailControl"
+        placeholder="Ex. pat@example.com"
+      />
+    </mat-form-field>
+  </div></div>
+
+  <div class="col-lg-6">
+    <div class="single_form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label
+      ><mat-error *ngIf="emailControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+
+      <input
+        type="password"
+        matInput
+        style="font-size: x-large"
+        [formControl]="passwordControl"
+        placeholder="Your Password"
+      />
+    </mat-form-field>
+  </div></div>
+  <label style="display: flex">
+    <input type="checkbox" [(ngModel)]="rememberMe" />
+    Remember me.
+  </label>
+
+<button type="submit" class="main-btn" style="width: 15%;     margin: 0px 0px 0px 12px;" (click)="submit()">Login</button>
+    </div>
+
+</form>
+</div>
+
+</section>
